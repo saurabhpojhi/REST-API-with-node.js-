@@ -1,5 +1,7 @@
 const express = require('express');
 
+const cors = require('cors');
+
 // Creating express server
 const app = express();
 
@@ -14,6 +16,15 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
+app.use((req, res, next)=>{
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    if(req.method === 'OPTIONS'){
+        res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE,GET');
+       return res.status(200).json({});
+    }
+    next();
+})
 // Handling routes request
 app.use("/products",produtsroute);
 app.use("/order",orderroute);
