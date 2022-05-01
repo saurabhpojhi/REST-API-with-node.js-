@@ -4,11 +4,15 @@ const express = require('express');
 const app = express();
 
 const morgan = require('morgan');
+const bodyParser = require('body-parser');
+
 // Importing all the routes
 const produtsroute=require("./routes/products.js");
 const orderroute=require("./routes/order.js");
   
 app.use(morgan('dev'));
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
 
 // Handling routes request
 app.use("/products",produtsroute);
