@@ -1,0 +1,27 @@
+{
+  "name": "rest-api-with-node.js-",
+  "version": "1.0.0",
+  "description": "RESTful API using node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saurabhpojhi/REST-API-with-node.js-.git"
+  },
+  "keywords": [
+    "node",
+    "restful",
+    "api"
+  ],
+  "author": "saurabh kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saurabhpojhi/REST-API-with-node.js-/issues"
+  },
+  "homepage": "https://github.com/saurabhpojhi/REST-API-with-node.js-#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
