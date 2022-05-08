@@ -7,11 +7,23 @@ const app = express();
 
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
 
 // Importing all the routes
 const produtsroute=require("./routes/products.js");
 const orderroute=require("./routes/order.js");
   
+// connnect database 
+mongoose.connect('mongodb://localhost:27017/REST_API_Test')
+.then(conn=>{
+    console.log('MongoDB connected')
+})
+.catch(error=>{
+    console.log("Error:"+ error.Message)
+})
+
+
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
