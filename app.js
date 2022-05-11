@@ -37,6 +37,7 @@ app.use((req, res, next)=>{
     }
     next();
 })
+
 // Handling routes request
 app.use("/products",produtsroute);
 app.use("/order",orderroute);
@@ -48,6 +49,7 @@ app.use((req,res,next)=>{
     next(error);
 });
 
+// handle error in middleware
 app.use((error, req, res, next)=>{
     res.status(error.status || 500);
     res.json({
