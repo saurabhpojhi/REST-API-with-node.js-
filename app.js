@@ -24,7 +24,7 @@ mongoose.connect('mongodb://localhost:27017/REST_API_Test')
 })
 
 
-app.use(morgan('dev'));
+app.use(morgan('dev'));   // this is show log in terminal
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
