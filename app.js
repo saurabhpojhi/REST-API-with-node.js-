@@ -13,6 +13,7 @@ const mongoose = require('mongoose');
 // Importing all the routes
 const produtsroute=require("./routes/products.js");
 const orderroute=require("./routes/order.js");
+const api=require("./routes/API.js");
   
 // connnect database 
 mongoose.connect('mongodb://localhost:27017/REST_API_Test')
@@ -41,6 +42,7 @@ app.use((req, res, next)=>{    // this is main error handler dlew
 // Handling routes request
 app.use("/products",produtsroute);
 app.use("/order",orderroute);
+app.use("/API",api)
 
 // this is middleware error handler to handle the error 
 app.use((req,res,next)=>{
